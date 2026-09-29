@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#290c15">
+  <meta name="description" content="Uma carta especial para celebrar os quinze anos de Yasmim. 10 de julho de 2027.">
+  <title>Uma carta para você | Yasmim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/abertura.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="sobretitulo">Yasmim · Meus quinze anos</p>
+      <h1>Uma carta para você</h1>
+      <p class="instrucao" aria-live="polite">Toque no selo para abrir.</p>
+      <div class="ornamento" aria-hidden="true">✧</div>
+    </header>
+
+    <div class="cena">
+      <div class="envelope">
+        <article class="carta" id="carta" aria-label="Convite de Yasmim" inert>
+          <span class="canto canto-se" aria-hidden="true"></span>
+          <span class="canto canto-sd" aria-hidden="true"></span>
+          <span class="canto canto-ie" aria-hidden="true"></span>
+          <span class="canto canto-id" aria-hidden="true"></span>
+          <div class="carta-conteudo">
+            <div class="monograma-carta" aria-hidden="true">Y</div>
+            <p class="carta-topo">Uma noite para guardar no coração</p>
+            <h2>Yasmim</h2>
+            <p class="quinze-anos">MEUS QUINZE ANOS</p>
+            <div class="ornamento-carta" aria-hidden="true">— ✧ —</div>
+            <p class="carta-data"><time datetime="2027-07-10">10 · JULHO · 2027</time></p>
+            <a class="entrar" href="/convite">Descobrir meu convite <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <div class="frente" aria-hidden="true"></div>
+        <div class="aba" aria-hidden="true"></div>
+        <div class="fita" aria-hidden="true"></div>
+        <div class="pontas" aria-hidden="true"></div>
+        <div class="laco" aria-hidden="true"></div>
+        <button class="selo" id="abrir-envelope" type="button" aria-label="Abrir a carta de Yasmim" aria-controls="carta" aria-expanded="false">
+          <span aria-hidden="true">Y</span>
+        </button>
+      </div>
+    </div>
+
+    <footer>
+      <p class="assinatura">Com carinho, Yasmim</p>
+      <p class="rodape-data">10.07.2027</p>
+    </footer>
+    <noscript><p class="aviso-sem-js"><a href="/convite">Abrir o convite de Yasmim</a></p></noscript>
+
+  </main>
+
+  <audio
+  id="musica"
+  src="/bela_e_a_fera.mp3"
+  preload="auto"
+  loop
+></audio>
+
+<button
+  id="botao-musica"
+  type="button"
+  aria-label="Reproduzir música"
+  hidden
+>
+  ♫
+</button>
+
+<iframe
+  id="tela-convite"
+  title="Convite de Yasmim"
+  allow="autoplay"
+  hidden
+></iframe>
+
+<script src="/abertura.js" defer></script>
+</body>
+</html>
