@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/*.rb": {
+      "includeFiles": "views/**"
+    }
+  },
+  "rewrites": [
+    { "source": "/", "destination": "/api/index" },
+    { "source": "/convite", "destination": "/api/convite" },
+    { "source": "/index.html", "destination": "/api/index" },
+    { "source": "/convite.html", "destination": "/api/convite" }
+  ]
+}

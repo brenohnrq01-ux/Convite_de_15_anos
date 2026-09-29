@@ -1,0 +1,590 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap");
+
+/* Cores e fontes do convite */
+:root {
+  --vermelho: #330a13;
+  --vermelho-escuro: #21070d;
+  --dourado: #dfba76;
+  --creme: #fbefdb;
+  --texto-suave: #d3bbaa;
+
+  --fonte-titulo: "Cormorant Garamond", Georgia, serif;
+  --fonte-texto: "DM Sans", Arial, sans-serif;
+}
+
+/* Configurações gerais */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+}
+
+body {
+  margin: 0;
+  background: var(--vermelho);
+  color: var(--creme);
+  font-family: var(--fonte-texto);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: break-word;
+}
+
+em {
+  color: var(--dourado);
+  font-weight: 400;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--dourado);
+  outline-offset: 6px;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  min-height: 100px;
+  margin: 0 6%;
+  padding: 15px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  border-bottom: 1px solid rgb(223 186 118 / 25%);
+}
+
+.monograma {
+  color: var(--dourado);
+  font-family: var(--fonte-titulo);
+  font-size: 46px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.monograma span {
+  display: inline-block;
+  font-family: var(--fonte-texto);
+  font-size: 12px;
+  transform: translate(-3px, 8px);
+}
+
+.link-cabecalho {
+  font-size: 14px;
+  text-decoration: none;
+  text-align: right;
+}
+
+.link-cabecalho span {
+  margin-left: 12px;
+  color: var(--dourado);
+}
+
+.link-cabecalho:hover {
+  color: var(--dourado);
+}
+
+/* Abertura */
+.abertura {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  max-width: 1500px;
+  min-height: 740px;
+  margin: 0 auto;
+}
+
+.abertura-conteudo {
+  padding: 80px 8% 70px 12%;
+}
+
+.sobretitulo {
+  color: var(--dourado);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.introducao {
+  margin: 36px 0 10px;
+  color: var(--texto-suave);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(4rem, 6.6vw, 6.5rem);
+  line-height: 1.05;
+}
+
+.divisor {
+  width: 70px;
+  height: 1px;
+  margin: 28px 0;
+  background: var(--dourado);
+}
+
+.nome-completo {
+  color: var(--texto-suave);
+  font-size: 14px;
+}
+
+.data-destaque {
+  margin: 24px 0;
+  font-family: var(--fonte-titulo);
+  font-size: 36px;
+}
+
+.data-destaque span {
+  padding: 0 12px;
+  font-family: var(--fonte-texto);
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  vertical-align: middle;
+}
+
+.mensagem {
+  max-width: 370px;
+  color: var(--texto-suave);
+}
+
+/* Botões */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+
+  max-width: 100%;
+  min-height: 54px;
+  margin-top: 22px;
+  padding: 14px 24px;
+
+  border: 1px solid rgb(223 186 118 / 55%);
+
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.botao:hover {
+  background: rgb(223 186 118 / 12%);
+}
+
+.botao span {
+  flex-shrink: 0;
+}
+
+.botao-dourado {
+  background: var(--dourado);
+  border-color: var(--dourado);
+  color: var(--vermelho-escuro);
+  font-weight: 600;
+}
+
+.botao-dourado:hover {
+  background: #efcd93;
+  border-color: #efcd93;
+}
+
+/* Área da imagem: a rosa será inserida no próximo passo */
+.abertura-imagem {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  min-height: 620px;
+  margin: 32px 8% 32px 0;
+
+  border: 1px solid rgb(223 186 118 / 25%);
+  border-radius: 260px 260px 0 0;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgb(139 42 52 / 35%),
+      transparent 70%
+    ),
+    var(--vermelho-escuro);
+}
+
+/* Este estilo já deixa a futura imagem pronta */
+.abertura-imagem img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.abertura-imagem::after {
+  content: "";
+  position: absolute;
+  inset: 60% 0 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background: linear-gradient(
+    transparent,
+    rgb(33 7 13 / 95%)
+  );
+}
+
+.legenda-imagem {
+  position: absolute;
+  right: 20px;
+  bottom: 35px;
+  left: 20px;
+  z-index: 2;
+
+  margin: 0;
+  color: var(--dourado);
+  font-family: var(--fonte-titulo);
+  font-size: 30px;
+  font-style: italic;
+  text-align: center;
+}
+
+.legenda-imagem span {
+  display: block;
+  margin-top: 10px;
+
+  color: var(--creme);
+  font-family: var(--fonte-texto);
+  font-size: 12px;
+  font-style: normal;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* Informações da festa */
+.detalhes {
+  padding: 80px 8% 90px;
+  background: var(--creme);
+  color: var(--vermelho);
+}
+
+.detalhes > .sobretitulo {
+  color: #795023;
+}
+
+h2 {
+  margin: 15px 0 45px;
+  font-size: clamp(2.5rem, 4vw, 3.625rem);
+  line-height: 1.15;
+}
+
+.detalhes h2 em {
+  color: #795023;
+}
+
+.detalhes-grade {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1.25fr)
+    minmax(0, 0.8fr);
+  gap: 40px;
+}
+
+.detalhe {
+  padding-top: 25px;
+  border-top: 1px solid rgb(51 10 19 / 20%);
+}
+
+.detalhe-numero {
+  color: #79583d;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+}
+
+h3 {
+  margin: 20px 0 12px;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.detalhe p {
+  margin: 12px 0;
+}
+
+.observacao {
+  display: block;
+  color: #725e53;
+  font-size: 14px;
+}
+
+.detalhe address {
+  margin: 12px 0;
+  font-style: normal;
+}
+
+.link-localizacao {
+  display: inline-block;
+  padding: 10px 0;
+  font-size: 14px;
+  text-underline-offset: 6px;
+}
+
+.link-localizacao:hover {
+  color: #795023;
+}
+
+.detalhes a:focus-visible {
+  outline-color: var(--vermelho);
+}
+
+/* Confirmação de presença */
+.presenca {
+  padding: 75px 24px 80px;
+  background: var(--vermelho-escuro);
+  text-align: center;
+}
+
+.ornamento {
+  margin-bottom: 20px;
+  color: var(--dourado);
+  font-size: 28px;
+}
+
+.presenca h2 {
+  margin-bottom: 24px;
+}
+
+.presenca p {
+  color: var(--texto-suave);
+}
+
+.presenca .sobretitulo {
+  color: var(--dourado);
+}
+
+.presenca strong {
+  color: var(--creme);
+  font-weight: 500;
+}
+
+.presenca .texto-apoio {
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+/* Rodapé */
+.rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 30px 6%;
+  border-top: 1px solid rgb(223 186 118 / 20%);
+}
+
+.rodape p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.rodape em {
+  margin-left: 8px;
+  font-family: var(--fonte-titulo);
+  font-size: 28px;
+}
+
+.rodape > span {
+  color: var(--texto-suave);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+/* Tablets e celulares */
+@media (max-width: 800px) {
+  .cabecalho {
+    min-height: 78px;
+  }
+
+  .abertura {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .abertura-conteudo {
+    padding: 45px 24px 40px;
+    text-align: center;
+  }
+
+  .introducao {
+    margin-top: 25px;
+  }
+
+  h1 {
+    font-size: clamp(3.5rem, 12vw, 5rem);
+  }
+
+  .divisor {
+    margin: 25px auto;
+  }
+
+  .mensagem {
+    margin: 20px auto;
+  }
+
+  .abertura-imagem {
+    min-height: 460px;
+    margin: 0 8% 45px;
+    border-radius: 240px 240px 0 0;
+  }
+
+  .abertura-imagem img {
+    object-position: center;
+  }
+
+  .detalhes {
+    padding: 55px 8%;
+  }
+
+  .detalhes h2 {
+    margin-bottom: 32px;
+  }
+
+  .detalhes-grade {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .detalhe {
+    padding-top: 18px;
+  }
+
+  .detalhe h3 {
+    margin-top: 12px;
+  }
+
+  .presenca {
+    padding: 55px 24px;
+  }
+
+  .rodape {
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px;
+    text-align: center;
+  }
+}
+
+/* Celulares menores */
+@media (max-width: 380px) {
+  .cabecalho {
+    gap: 12px;
+  }
+
+  .link-cabecalho {
+    max-width: 180px;
+  }
+
+  .botao {
+    gap: 12px;
+    padding: 14px 18px;
+  }
+
+  .abertura-imagem {
+    min-height: 390px;
+  }
+}
+
+/* Respeita a preferência por menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .botao {
+    transition: none;
+  }
+}
+
+/* Vídeo dentro do arco */
+.abertura-imagem video {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.controle-animacao {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  z-index: 3;
+
+  transform: translateX(-50%);
+  min-height: 44px;
+  max-width: calc(100% - 32px);
+  padding: 10px 18px;
+
+  border: 1px solid rgb(223 186 118 / 60%);
+  border-radius: 4px;
+
+  background: rgb(33 7 13 / 85%);
+  color: var(--creme);
+
+  font-family: var(--fonte-texto);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.controle-animacao:hover {
+  background: var(--vermelho);
+}
+
+.controle-animacao:focus-visible {
+  outline: 3px solid var(--dourado);
+  outline-offset: 4px;
+}
+
+.abertura-imagem img {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.abertura-imagem .legenda-imagem {
+  bottom: 35px;
+}
